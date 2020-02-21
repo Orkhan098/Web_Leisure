@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HomeWork</title>
+	<script src="https://kit.fontawesome.com/51c27063d2.js"></script>
+  </head>
+	<link rel="stylesheet" type="text/css" href="hw.css">
+</head>
+<body>
+
+	<div class="top">
+		<div class="button1">
+			<button onclick="changervsImg()"><i class="fas fa-chevron-left"></i></button>
+		</div>
+		<div class="mainImg">
+			<img src="car1.png" alt="" id="main">
+		</div>
+		<div class="button2">
+			<button onclick="changeImg()"><i class="fas fa-chevron-right"></i></button>
+		</div>	
+	</div>
+			
+			<div class="bottom">
+			<img src="car1.png" id="border1" class="border" onclick="clickImg(0)">
+			<img src="car2.png" id="border2" onclick="clickImg(1)">
+			<img src="car3.png" id="border3" onclick="clickImg(2)">
+			<img src="car4.png" id="border4" onclick="clickImg(3)">
+		</div>
+
+<script>
+	var border=document.getElementById("border1")
+	var border=document.getElementById("border2")
+	var border=document.getElementById("border3")
+	var border=document.getElementById("border4")
+
+	var main=document.getElementById("main");
+	var gallery=["car1.png","car2.png","car3.png","car4.png"];
+		
+		var state=1;
+		
+	function changeImg(){
+				
+		if(state==1){
+		main.setAttribute("src",gallery[state]);
+		border2.style.borderBottom="2px solid white";
+		border1.style.border="none";
+		}
+		
+		else if(state==2){
+			main.setAttribute("src",gallery[state]);
+			border3.style.borderBottom="2px solid white";
+			border2.style.border="none";
+
+			
+		}
+		else if(state==3){
+			main.setAttribute("src",gallery[state]);
+			border4.style.borderBottom="2px solid white";
+			border3.style.border="none";
+		}
+		else if(state==4){
+			state--;
+		}
+
+		state++;
+	}	
+	
+	
+	function changervsImg(){
+
+		
+		if(state==4){
+			
+			main.setAttribute("src",gallery[2]);
+			border4.style.border="none";
+			border3.style.borderBottom="2px solid white";
+
+		}
+
+		else if(state==3){
+			
+			main.setAttribute("src",gallery[1]);
+			border3.style.border="none";
+			border2.style.borderBottom="2px solid white";
+
+		}
+
+		else if(state==2){
+			
+			main.setAttribute("src",gallery[0]);
+			border2.style.border="none";
+			border1.style.borderBottom="2px solid white";
+		}
+
+		else if(state<=1){
+
+			state++;
+		}
+
+		state--;	
+	}
+
+	
+	function clickImg(n){
+
+		main.setAttribute("src",gallery[n]);
+	
+		border1.style.borderBottom="none";
+		border2.style.borderBottom="none";
+		border3.style.borderBottom="none";
+		border4.style.borderBottom="none";
+
+		if(n==0){
+			border1.style.borderBottom="2px solid white";
+
+		}
+		else if(n==1){
+			border2.style.borderBottom="2px solid white";
+		}
+		else if(n==2){
+			border3.style.borderBottom="2px solid white";
+		}
+		else if(n==3){
+			border4.style.borderBottom="2px solid white";
+		}
+
+	}
+
+	// function Change(n){
+	// 	main.setAttribute("src",gallery[n]);
+	// 	i=n;
+	// }
+		
+	
+	
+
+</script>
+
+</body>
+</html>
